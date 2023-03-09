@@ -1,0 +1,81 @@
+.container{
+    background: #2D2D2D;
+    box-shadow: 2px 4px 4px rgba(173, 173, 173, 0.25);
+    
+}
+
+.header--superior {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    
+    button {
+        background-color: #2D2D2D;
+        border: none;
+    }
+
+    input {
+        
+        height: 38px;
+        width: 1260px;
+        margin-top: 45px;
+        border-radius: 8px;
+        padding-left: 70px;
+        padding-top: 6px;
+
+    }
+
+    input::placeholder {
+        font-size: 20px;
+        
+    }
+
+    .logo {
+        width: 180px; 
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .carrinho {
+        width: 60px;
+        height: 60px;
+        margin-top: 25px;
+    }
+
+    .lupa {
+        position: absolute;
+        left: 385px;
+        top: 54px;
+        right: 100;
+        bottom: 10;
+        height: 23px;
+    }
+
+}
+
+.header--inferior {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+
+    h3 {
+        color: #FFFFFF;
+        margin-left: 110px;
+        font-size: 26px;
+        margin-bottom: 30px;
+        font-weight: 300;
+
+        
+    }
+
+    h3:hover {
+        cursor: pointer;
+    }
+
+    .font--bold {
+        font-weight: bold;
+    }
+
+}
