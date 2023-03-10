@@ -9,7 +9,7 @@ Feito inteiramente com o React do Vite, dados pegos de um Mock feito por conta p
 
 #Como ver o projeto
 
-Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd" para a pasta e-commerce, depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL.
+Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd" para a pasta "e-commerce", depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL.
 
 
 
