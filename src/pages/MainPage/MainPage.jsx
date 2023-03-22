@@ -9,6 +9,8 @@ import { useEffect } from 'react'
 
 const MainPage = ({data}) => {
 
+    
+
     function descerPagina() {
         window.scrollTo(0, 150);
       }

@@ -27,15 +27,20 @@ const StoreSection = ({ data, selectedProducts }) => {
             <h1>{selectedProducts.title}</h1>
           </div>
 
+          
           <div className="price--color">
+            
             <h2>{selectedProducts.price}</h2>
+            
             <h3>Cor: {selectedProducts.colorName}</h3>
             <p
               style={{
                 backgroundColor: selectedProducts.color,
               }}
             ></p>
+            
           </div>
+          
           <div className="button">
             
           <button>

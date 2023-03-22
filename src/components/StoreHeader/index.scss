@@ -8,6 +8,7 @@
     position: relative;
     display: flex;
     justify-content: space-around;
+    margin-right: 130px;
     
     button {
         background-color: #2D2D2D;
@@ -15,7 +16,7 @@
     }
 
     input {
-        
+        font-size: 20px;
         height: 38px;
         width: 1260px;
         margin-top: 45px;
@@ -38,15 +39,19 @@
     }
 
     .carrinho {
+        position: absolute;
+        top:8px;
+        right: -10px;
         width: 60px;
         height: 60px;
         margin-top: 25px;
+        
     }
 
     .lupa {
         position: absolute;
-        left: 385px;
-        top: 54px;
+        left: 430px;
+        top: 55px;
         right: 100;
         bottom: 10;
         height: 23px;
