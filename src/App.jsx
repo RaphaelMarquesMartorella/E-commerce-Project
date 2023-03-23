@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Login from './pages/Login/Login'
 import MainPage from './pages/MainPage/MainPage'
 import ProductSelected from './pages/ProductSelected/ProductSelected'
-import Carrinho from './pages/Carrinho/Carrinho'
+import ShopCart from './pages/ShopCart/ShopCart'
 import Pay from './pages/Pay/Pay'
 import { Routes, Route } from 'react-router-dom'
 import { PRODUCTS_MOCK } from './mock/product.mock'
@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element= {<Login />} />
         <Route path='/mainPage' element= {<MainPage data={PRODUCTS_MOCK}/>} />
         <Route path= "/productSelected/:productId" element={ <ProductSelected data={ PRODUCTS_MOCK }/>} />
-        <Route path= "/carrinho/:carrinhoId" element={ <Carrinho data={ PRODUCTS_MOCK }/>} />
+        <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ PRODUCTS_MOCK }/>} />
         <Route  path= "/pay" element= {<Pay data={ PRODUCTS_MOCK }/>} />
       </Routes>
     </div>

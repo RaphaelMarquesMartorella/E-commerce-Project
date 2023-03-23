@@ -27,17 +27,21 @@ const StoreSection = ({ data, selectedProducts }) => {
             <h1>{selectedProducts.title}</h1>
           </div>
 
-          
           <div className="price--color">
             
-            <h2>{selectedProducts.price}</h2>
+
             
+            <h2>{selectedProducts.price}</h2>
+            {(selectedProducts.color)  && 
+            <div>
             <h3>Cor: {selectedProducts.colorName}</h3>
             <p
               style={{
                 backgroundColor: selectedProducts.color,
               }}
-            ></p>
+            ></p> 
+            </div>}
+          
             
           </div>
           
@@ -45,7 +49,7 @@ const StoreSection = ({ data, selectedProducts }) => {
             
           <button>
           
-          <Link to={`/carrinho/${selectedProducts.id}`}>Adicionar ao carrinho</Link>
+          <Link to={`/shopCart/${selectedProducts.id}`}>Adicionar ao carrinho</Link>
           </button>
           <img src={Carrinho} alt="Carrinho de compras" />
           </div>

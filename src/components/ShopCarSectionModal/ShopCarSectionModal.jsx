@@ -34,6 +34,7 @@ const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
                 
             </div>
 
+            
             <div className='price-color'>
                 <h2>{data.price}</h2>
                  <h3>Cor: {data.colorName}</h3>

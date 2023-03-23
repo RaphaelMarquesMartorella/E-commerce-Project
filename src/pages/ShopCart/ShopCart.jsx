@@ -8,8 +8,8 @@ import Footer from '../../components/Footer/Footer'
 const Carrinho = ({data}) => {
 
   const [openModal, setOpenModal] = useState(true)
-  const { carrinhoId }  = useParams();
-  const selectedCart = data.find(cart => cart.id == carrinhoId)
+  const { shopCartId }  = useParams();
+  const selectedCart = data.find(cart => cart.id == shopCartId)
   console.log(selectedCart)
   
 
