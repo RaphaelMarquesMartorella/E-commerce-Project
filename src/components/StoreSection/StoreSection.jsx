@@ -4,40 +4,39 @@ import { Link } from "react-router-dom";
 import Carrinho from '../../assets/carrinhoCompras.png'
 
 
-const StoreSection = ({ data, selectedProducts }) => {
-  console.log(data);
+const StoreSection = ({ facility }) => {
+  
 
   return (
     <div>
       <div className="all--sides">
         <div className="left--side">
             
-          <img src={selectedProducts.imgPath} alt={selectedProducts.title} />
+          <img src={facility.imgPath} alt={facility.title} />
           <div className="left--side__title">
-            <p>{selectedProducts.title}</p>
+            <p>{facility.title}</p>
           </div>
           <div className="left--side__description">
             <h3>Descrição</h3>
-            <p>{selectedProducts.description}</p>
+            <p>{facility.description}</p>
           </div>
         </div>
 
         <div className="right--side">
           <div className="right--side__title">
-            <h1>{selectedProducts.title}</h1>
+            <h1>{facility.title}</h1>
           </div>
 
           <div className="price--color">
             
 
             
-            <h2>{selectedProducts.price}</h2>
-            {(selectedProducts.color)  && 
+            <h2>R$: {facility.price}</h2>
+            {(facility.color)  && 
             <div>
-            <h3>Cor: {selectedProducts.colorName}</h3>
             <p
               style={{
-                backgroundColor: selectedProducts.color,
+                backgroundColor: facility.color,
               }}
             ></p> 
             </div>}
@@ -49,7 +48,7 @@ const StoreSection = ({ data, selectedProducts }) => {
             
           <button>
           
-          <Link to={`/shopCart/${selectedProducts.id}`}>Adicionar ao carrinho</Link>
+          <Link to={`/shopCart/${facility._id}`}>Adicionar ao carrinho</Link>
           </button>
           <img src={Carrinho} alt="Carrinho de compras" />
           </div>

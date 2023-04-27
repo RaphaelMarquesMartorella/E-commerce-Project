@@ -23,12 +23,21 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    label {
+    justify-content: center;
+    
+    
+    .label-name {
         width: 450px;
-        text-align: left !important;
-        font-size: 23px;
+        text-align: left ;
+        margin-left: 20px;
+        font-size: 16px;
         
+    }
+    .label-password {
+        width: 450px;
+        text-align: left ;
+        margin-left: 20px;
+        font-size: 16px;
     }
     
 
@@ -41,7 +50,6 @@ form {
         border-radius: 8px;
         border: 1px solid gray;
         margin-top: 10px;
-        margin-bottom: 20px;
         padding: 10px;
         padding-left: 20px;
         padding-top: 12px;
@@ -54,13 +62,12 @@ form {
      font-size: 13px;       
     }
 
-    button {
-        width: 450px;
+    .login-button {
+        width: 260px !important;
         height: 45px;
-        border-radius: 6px;
+        border-radius: 10px;
         border: none;
         background: #0C70F2; 
-        margin-top: 30px;
         font-weight: 800;
         font-size: 17px;
         color: #FFFFFF;
@@ -69,6 +76,16 @@ form {
     }
 
     
+}
+
+.sign-up-page {
+    width: 100%;
+    text-align: center;
+    margin-top: 45px;
+
+    a:hover{
+        cursor: pointer;
+    }
 }
 
 

@@ -19,7 +19,7 @@ const Pay = ({data}) => {
 
         
     <section>
-      <PaySectionModal isOpen={openModal} data={data} setOpenModal={() => setOpenModal(!openModal)}/>
+      <PaySectionModal isOpen={openModal} data={selectedPayment} setOpenModal={() => setOpenModal(!openModal)}/>
     </section>
 
     <Footer />

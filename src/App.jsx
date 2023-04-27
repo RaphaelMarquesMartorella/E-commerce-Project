@@ -1,5 +1,4 @@
 import './App.css'
-import { useState } from 'react'
 import Login from './pages/Login/Login'
 import MainPage from './pages/MainPage/MainPage'
 import ProductSelected from './pages/ProductSelected/ProductSelected'
@@ -7,20 +6,72 @@ import ShopCart from './pages/ShopCart/ShopCart'
 import Pay from './pages/Pay/Pay'
 import { Routes, Route } from 'react-router-dom'
 import { PRODUCTS_MOCK } from './mock/product.mock'
-import StoreHeader from './components/StoreHeader/StoreHeader'
+import { useCookies } from "react-cookie";
+import { useEffect, useState, useCallback } from 'react'
+import axios from 'axios'
 
 function App() {
-  // const [searchValue, setSearchValue] = useState('')
+  const [cookies, _] = useCookies(["access_token"]);
+  
+
+
+    
+  
+  const [facility, setFacility] = useState([]);
+  
+
+    function descerPagina() {
+        window.scrollTo(0, 150);
+      }
+
+      
+
+  const fetchData = useCallback(() => {
+    axios({
+      "method": "GET",
+      "url": "http://localhost:3001/api/v1/products",
+    })
+      .then((response) => {
+
+        const APIResponse = response.data // This is response data from AXIOS
+
+        console.log("response: ", APIResponse.allProducts) // This is response data from API
+
+        setFacility(APIResponse.allProducts) // Only Response from API is set in state
+
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }, [])
+      
+      
+
+    useEffect(() => {
+      
+      fetchData()
+      
+      
+    }, [fetchData])
+
 
   return (
     <div className="App">
       {/* <StoreHeader onSubmit={(inputValue) => setSearchValue(inputValue)}/> */}
       <Routes>
         <Route path='/' element= {<Login />} />
-        <Route path='/mainPage' element= {<MainPage data={PRODUCTS_MOCK}/>} />
-        <Route path= "/productSelected/:productId" element={ <ProductSelected data={ PRODUCTS_MOCK }/>} />
-        <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ PRODUCTS_MOCK }/>} />
-        <Route  path= "/pay" element= {<Pay data={ PRODUCTS_MOCK }/>} />
+        {(cookies.access_token) && 
+        <Route path='/mainPage' element= {<MainPage data={facility}/>} />
+        } 
+        {(cookies.access_token) && 
+        <Route path= "/productSelected/:productId" element={ <ProductSelected data = {facility}/>} />
+        }
+        {(cookies.access_token) && 
+        <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ facility }/>} />
+        }
+        {(cookies.access_token) && 
+        <Route  path= "/pay" element= {<Pay data={ facility }/>} />
+        }  
       </Routes>
     </div>
   )

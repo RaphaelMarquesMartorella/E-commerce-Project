@@ -9,7 +9,7 @@ import '../../assets/granTurismo.png'
 
 const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
 
-  console.log(data)
+  
   
 
   if(isOpen){
@@ -28,7 +28,7 @@ const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
         <div className='right-side'>
             
             <div className='right-side__title'>
-                <Link to={'/productSelected/1'}><span onClick={setOpenModal}>X</span></Link>
+                <Link to={`/productSelected/${data._id}`}><span onClick={setOpenModal}>X</span></Link>
 
                 <h1 className='myCar_title'>Meu Carrinho</h1>
                 
@@ -36,7 +36,7 @@ const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
 
             
             <div className='price-color'>
-                <h2>{data.price}</h2>
+                <h2>R$: {data.price}</h2>
                  <h3>Cor: {data.colorName}</h3>
                  <p style={{
                      backgroundColor:(data.color)

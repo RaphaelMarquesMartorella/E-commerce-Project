@@ -28,13 +28,16 @@ const StoreHeader = ({ data }) => {
     window.scrollTo(0, 120);
   }
 
-  
+  const handleInputValue = (e) => {
+    
+    setSearchValue(e.target.value);
+    
+    console.log(searchValue);
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchValue(e.target[0].value);
-    searchValue == '' ? setAlertValue('*Campo não preenchido*') : setAlertValue('')
-    console.log(searchValue);
+    
     checkValue()
     greenLightToSearch()
     Search()
@@ -58,9 +61,7 @@ const StoreHeader = ({ data }) => {
       
    
     
-    console.log(searchValueNumber)
-    console.log(searchValue)
-    console.log(allowSearch)
+    
 
       const Search = () => {
         if (allowSearch) { (
@@ -83,7 +84,7 @@ const StoreHeader = ({ data }) => {
         </Link>
         <img className="lupa" src={Lupa} alt="Lupa de busca" />
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="O que você está procurando?" />
+          <input onChange={handleInputValue} type="text" placeholder="O que você está procurando?" />
           <p style={{width: '1250px',
         textAlign:'right',
         color:'royalblue'}}>{alertValue}</p>

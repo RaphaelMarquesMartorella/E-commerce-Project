@@ -54,7 +54,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
        <div className='all-content'>
         <div className='title'>
         <div className='right-side__title'>
-                <Link to={'/productSelected/1'}><span onClick={setOpenModal}>X</span></Link>
+                <Link to={`/productSelected/${data._id}`}><span onClick={setOpenModal}>X</span></Link>
 
                 
                 
@@ -63,7 +63,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
         </div>
             <div className='forms'>
               <form onSubmit={handleSubmitDefault}>
-                <label>Digite seu nome:</label>
+                <label className='payCart-label'>Digite seu nome:</label>
                 <input type="text" placeholder='Nome completo'/>
                 <p className='Ps' style={{
                   width:'430px',
@@ -72,7 +72,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
                   fontSize: '12px', 
                   color:'red'
                 }}>{alertSpaceEmpty1}</p>
-                <label>Digite seu CPF:</label>
+                <label className='payCart-label'>Digite seu CPF:</label>
                 <input type="text" placeholder='000.000.000-00'/>
                 <p className='Ps' style={{
                   width:'430px',
@@ -81,7 +81,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
                   fontSize: '12px', 
                   color:'red'
                 }}>{alertSpaceEmpty2}</p>
-                <label>Endereço:</label>
+                <label className='payCart-label'>Endereço:</label>
                 <input type="text" placeholder='Rua dos bobos, número 0'/>
                 <p className='Ps' style={{
                   width:'430px',
@@ -90,7 +90,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
                   fontSize: '12px', 
                   color:'red'
                 }}>{alertSpaceEmpty3}</p>
-                <label>Forma de Pagamento:</label>
+                <label className='payCart-label'>Forma de Pagamento:</label>
                 <input type="text" placeholder='Dinheiro/Cartão'/>
                 <p className='Ps' style={{
                   width:'430px',
