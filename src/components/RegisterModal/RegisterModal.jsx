@@ -52,12 +52,12 @@ const RegisterModal = ({data, isOpen, setOpenModal}) => {
         fontSize:"28px"
        }} onClick={setOpenModal}>X</span>
             <h2>Acesse com seu login ou cadastre-se!</h2>
-            <h3>você pode entrar com o seu CPF</h3>
+            <h3>você pode entrar com o seu nome!</h3>
         </div>
         
         <div className='register-inputs'>
             <form onSubmit={handleRegisterSubmit}>
-            <label htmlFor="CPF">Digite seu CPF:</label>
+            <label htmlFor="CPF">Digite seu nome:</label>
             <input type="text" placeholder='Nome completo'/>
             <p style={{
               marginRight:'130px', 

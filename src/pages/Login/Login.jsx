@@ -112,7 +112,7 @@ const Login = () => {
             
         </div>
             <div className='sign-up-page'>
-              <b>New Costumer? <a onClick={toggleModal}>Create an account</a></b>
+              <b style={{fontWeight:'lighter'}}>Novo por aqui? <a style={{fontWeight:'bold'}} onClick={toggleModal}>Crie sua conta!</a></b>
             </div>
             
         </div>
