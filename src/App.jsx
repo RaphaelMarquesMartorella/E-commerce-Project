@@ -33,7 +33,7 @@ function App() {
 
         const APIResponse = response.data // This is response data from AXIOS
 
-        console.log("response: ", APIResponse.allProducts) // This is response data from API
+        // This is response data from API
 
         setFacility(APIResponse.allProducts) // Only Response from API is set in state
 
@@ -66,7 +66,7 @@ function App() {
         <Route path= "/productSelected/:productId" element={ (!facility) ? null : <ProductSelected data = {facility}/>} />
         }
         {(cookies.access_token) && 
-        <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ facility }/>} />
+        <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ (!facility) ? null : facility }/>} />
         }
         {(cookies.access_token) && 
         <Route  path= "/pay" element= {<Pay data={ facility }/>} />

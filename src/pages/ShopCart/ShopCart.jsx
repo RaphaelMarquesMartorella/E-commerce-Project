@@ -10,37 +10,81 @@ import axios from 'axios'
 
 const Carrinho = ({data}) => {
   const [facility, setFacility] = useState([]);
+  const [ID, setID] = useState({})
   const [openModal, setOpenModal] = useState(true)
   const { shopCartId }  = useParams();
-  const selectedCart = data.find(cart => cart._id == shopCartId)
-  console.log(selectedCart)
-  const fetchData = useCallback(() => {
-    axios({
-      "method": "GET",
-      "url": `http://localhost:3001/api/v1/products/${selectedCart._id}`,
-    })
-      .then((response) => {
-
-        const APIResponse = response.data // This is response data from AXIOS
-
-        console.log("response: ", APIResponse.getProduct) // This is response data from API
-
-        setFacility(APIResponse.getProduct) // Only Response from API is set in state
-
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [])
-      
-      
-
-    useEffect(() => {
-      fetchData()
-      console.log();
-    }, [fetchData])
   
+    const FindData = async () => {
+    
+      try {
+        
+          const selectedCart = await data.find(cart => cart._id == shopCartId)
+        
+        if(selectedCart) {
+  
+          setID(selectedCart)
+          
+        return selectedCart
+        }
+        
+      
+      } catch (error) {
+        console.log(error);
+  
+      }
+    
+      
+    }
+  
+  
+      const options = {
+        "method": "GET",
+        "url": `http://localhost:3001/api/v1/products/${ID._id}`,
+      }
+      
+      const fetchData = useCallback(
+        () => {
+          axios.request(options)
+        
+        
+        .then((response) => {
+  
+          const APIResponse = response.data // This is response data from AXIOS
+  
+           // This is response data from API
+  
+          setFacility(APIResponse.getProduct)
+          
+          // Only Response from API is set in state
+          
+        })
+        .catch((error) => {
+          
+          
+        })
+      
+        },
+        [ID],
+      )
+        
+      
+      useEffect(() => {
+        
+        FindData()
+        
+        
+      }, [data])
+   
+      
+      useEffect(() => {
 
+        fetchData()
+      
+      }, [data, fetchData])
+    
+    
+
+      
   return (
     <div className='body'>
         
