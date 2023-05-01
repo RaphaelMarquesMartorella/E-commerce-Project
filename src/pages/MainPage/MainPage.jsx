@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.scss'
-import { PRODUCTS_MOCK } from '../../mock/product.mock'
 import ProductsCard from '../../components/ProductsCard/ProductsCard'
 import StoreHeader from '../../components/StoreHeader/StoreHeader'
 import FooterMain from '../../components/FooterMain/FooterMain'

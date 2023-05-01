@@ -20,9 +20,7 @@ function App() {
   const [facility, setFacility] = useState([]);
   
 
-    function descerPagina() {
-        window.scrollTo(0, 150);
-      }
+    
 
       
 
@@ -47,6 +45,7 @@ function App() {
       
       
 
+
     useEffect(() => {
       
       fetchData()
@@ -64,7 +63,7 @@ function App() {
         <Route path='/mainPage' element= {<MainPage data={facility}/>} />
         } 
         {(cookies.access_token) && 
-        <Route path= "/productSelected/:productId" element={ <ProductSelected data = {facility}/>} />
+        <Route path= "/productSelected/:productId" element={ (!facility) ? null : <ProductSelected data = {facility}/>} />
         }
         {(cookies.access_token) && 
         <Route path= "/shopCart/:shopCartId" element={ <ShopCart data={ facility }/>} />

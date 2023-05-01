@@ -6,45 +6,99 @@ import StoreSection from '../../components/StoreSection/StoreSection'
 import Footer from '../../components/Footer/Footer'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState, useCallback } from 'react'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 
 
 const ProductSelected = ({data}) => {
-  
+
+  const { productId } = useParams();
+  const [ID, setID] = useState({})
   const [facility, setFacility] = useState([]);
   
-  const { productId } = useParams();
-  console.log(data);
-  
-  const selectedProducts = data.find((product) => product._id == productId);
 
-  const fetchData = useCallback(() => {
-    axios({
+
+  
+  
+  const FindData = async () => {
+    
+    
+    
+    
+    try {
+      
+      
+    
+      const selectedProduct = await data.find((product) => product._id == productId);
+      if(selectedProduct) {
+      
+      
+        setID(selectedProduct)
+        
+      return selectedProduct
+      }
+        
+      
+      
+    
+    } catch (error) {
+      console.log(error);
+      
+      
+    }
+  
+    
+  }
+
+
+  
+  
+  
+  
+  
+
+  
+   
+    const options = {
       "method": "GET",
-      "url": `http://localhost:3001/api/v1/products/${selectedProducts._id}`,
-    })
+      "url": `http://localhost:3001/api/v1/products/${ID._id}`,
+    }
+      
+  
+    useEffect(() => {
+      FindData()
+      
+    }, [data])
+    
+      
+      
+
+    useEffect(() => {
+      
+      
+      
+      axios.request(options)
+      
+      
       .then((response) => {
 
         const APIResponse = response.data // This is response data from AXIOS
 
         console.log("response: ", APIResponse.getProduct) // This is response data from API
 
-        setFacility(APIResponse.getProduct) // Only Response from API is set in state
+        setFacility(APIResponse.getProduct)
+        
+        // Only Response from API is set in state
 
       })
       .catch((error) => {
         console.log(error)
       })
-  }, [])
-  console.log(facility);
+  
       
       
-
-    useEffect(() => {
-      fetchData()
-      console.log();
-    }, [fetchData])
+    }, [data])
+  
   
 
   return (
