@@ -51,7 +51,7 @@ const MainPage = ({data}) => {
     <div className='container'>
         
          
-              <StoreHeader data={data} />
+              <StoreHeader data={facility} />
                     
                          
     

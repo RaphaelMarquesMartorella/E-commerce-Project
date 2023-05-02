@@ -13,6 +13,8 @@ import axios, { AxiosError } from 'axios'
 const ProductSelected = ({data}) => {
   
   const { productId } = useParams();
+  
+  window.localStorage.setItem("idParam", productId)
   const [ID, setID] = useState({})
   const [facility, setFacility] = useState([]);
   

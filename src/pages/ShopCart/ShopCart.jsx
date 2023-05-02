@@ -13,6 +13,8 @@ const Carrinho = ({data}) => {
   const [ID, setID] = useState({})
   const [openModal, setOpenModal] = useState(true)
   const { shopCartId }  = useParams();
+  window.localStorage.setItem("idParam", shopCartId)
+  
   
     const FindData = async () => {
     
@@ -84,7 +86,7 @@ const Carrinho = ({data}) => {
     
     
 
-      
+
   return (
     <div className='body'>
         

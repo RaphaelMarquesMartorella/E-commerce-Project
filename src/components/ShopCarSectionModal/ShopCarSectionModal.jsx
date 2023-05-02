@@ -1,14 +1,8 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
-import '../../assets/xboxBranco.png'
-import '../../assets/xboxPreto.png'
-import '../../assets/godOfWar.png'
-import '../../assets/nintendo.png'
-import '../../assets/uncharted.png'
-import '../../assets/granTurismo.png'
 
 const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
-
+  const idParam = window.localStorage.getItem('idParam')
   
   
 
@@ -28,7 +22,7 @@ const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
         <div className='right-side'>
             
             <div className='right-side__title'>
-                <Link to={`/productSelected/${data._id}`}><span onClick={setOpenModal}>X</span></Link>
+                <Link to={`/productSelected/${idParam}`}><span onClick={setOpenModal}>X</span></Link>
 
                 <h1 className='myCar_title'>Meu Carrinho</h1>
                 
@@ -37,10 +31,12 @@ const ShopCarSectionModal = ({isOpen, data, setOpenModal}) => {
             
             <div className='price-color'>
                 <h2>R$: {data.price}</h2>
-                 <h3>Cor: {data.colorName}</h3>
-                 <p style={{
-                     backgroundColor:(data.color)
-                 }}></p>
+                  {(data.color) && 
+                  <p style={{
+                    backgroundColor:(data.color)
+                    }}></p>
+                  }
+                 
                  
              </div>
              <Link to={'/mainPage'}>

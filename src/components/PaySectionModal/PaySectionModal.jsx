@@ -6,6 +6,8 @@ import { useState } from 'react'
 
 const PaySectionModal = ({data, isOpen, setOpenModal}) => {
   
+  const idParam = window.localStorage.getItem('idParam')
+
   const [prevent, setPrevent] = useState(true)
   const [alertSpaceEmpty1, setAlertSpaceEmpty1] = useState('')
   const [alertSpaceEmpty2, setAlertSpaceEmpty2] = useState('')
@@ -54,7 +56,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
        <div className='all-content'>
         <div className='title'>
         <div className='right-side__title'>
-                <Link to={`/productSelected/${data._id}`}><span onClick={setOpenModal}>X</span></Link>
+                <Link to={`/productSelected/${idParam}`}><span onClick={setOpenModal}>X</span></Link>
 
                 
                 
