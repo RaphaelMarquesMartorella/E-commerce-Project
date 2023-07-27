@@ -1,11 +1,11 @@
 
 #E-commerce project
 
-E-commerce feito por conta própria usando React e pegando dados de um mock criado por conta própria.
+E-commerce feito por conta própria usando React e pegando dados de uma api criada por conta própria.
 
 #Como foi feito
 
-Feito inteiramente com o React do Vite, dados pegos de um Mock feito por conta própria.
+Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta própria.
 
 #Como ver o projeto
 
