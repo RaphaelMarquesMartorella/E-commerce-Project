@@ -43,7 +43,7 @@ const Pay = ({data}) => {
   
       const options = {
         "method": "GET",
-        "url": `https://secure-beyond-22435-36910cbe64ba.herokuapp.com/api/v1/products/${ID._id}`,
+        "url": `https://e-commerce--api-7382d9eea506.herokuapp.com/api/v1/products/${ID._id}`,
       }
       
       const fetchData = useCallback(

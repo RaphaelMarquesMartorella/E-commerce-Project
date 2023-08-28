@@ -81,7 +81,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
         <h1>Finalizar Compra:</h1>
         </div>
             <div className='forms'>
-              <form onSubmit={handleSubmitDefault} onChange={handleInputs}>
+              <form action='https://api.sheetmonkey.io/form/8yEYpMYuQe2at4DpiwbE6f' method='post' onSubmit={handleSubmitDefault} onChange={handleInputs}>
                 <label className='payCart-label'>Digite seu nome:</label>
                 <input type="text" placeholder='Nome completo'/>
                 <p className='Ps' style={{

@@ -47,7 +47,7 @@ const Login = () => {
       }
 
       try {
-        const response = await axios.post('https://secure-beyond-22435-36910cbe64ba.herokuapp.com/api/v1/auth/login',{
+        const response = await axios.post('https://e-commerce--api-7382d9eea506.herokuapp.com/api/v1/auth/login',{
           name:valueInput1,
           password:valueInput2,
         })

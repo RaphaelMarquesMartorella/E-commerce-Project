@@ -27,7 +27,7 @@ function App() {
   const fetchData = useCallback(() => {
     axios({
       "method": "GET",
-      "url": "https://secure-beyond-22435-36910cbe64ba.herokuapp.com/api/v1/products",
+      "url": "https://e-commerce--api-7382d9eea506.herokuapp.com/api/v1/products",
     })
       .then((response) => {
 
