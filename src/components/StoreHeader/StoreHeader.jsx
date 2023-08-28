@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import Logo from "../../assets/logoDNC.png";
 import Carrinho from "../../assets/carrinhoCompras.png";
@@ -8,8 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 const StoreHeader = ({ data }) => {
   const idParam = window.localStorage.getItem('idParam')
   const [searchValue, setSearchValue] = useState()
-  const [searchValueNumber, setSearchValueNumber] = useState('')
-  const [allowSearch, setAllowSearch] = useState(false);
   const [alertValue, setAlertValue] = useState('')
 
   let navigate = useNavigate()
@@ -44,36 +42,6 @@ const StoreHeader = ({ data }) => {
       navigate(`/productSelected/${response._id}`)
     }
   };
-
-  
-    
-    // const checkValue = () => {
-    //   data.map((item, index) => {
-    //     searchValue.toLowerCase() == item.title.toLowerCase() && setSearchValueNumber(index + 1) 
-    //     searchValue.toLowerCase() == item.abreviatedTitle.toLowerCase() && setSearchValueNumber(index + 1)
-    //   })
-    // }
-
-   
-
-      
-
-      
-      
-   
-    
-    
-
-      // const Search = () => {
-      //   if (allowSearch) { (
-      //     navigate(`/productSelected/${searchValueNumber}`)
-          
-          
-      //   )} 
-      // }
-    
-    
-  
 
   
 

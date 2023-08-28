@@ -9,11 +9,33 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
   const idParam = window.localStorage.getItem('idParam')
 
   const [prevent, setPrevent] = useState(true)
+  const [input1Value, setInput1Value] = useState('')
+  const [input2Value, setInput2Value] = useState('')
+  const [input3Value, setInput3Value] = useState('')
+  const [input4Value, setInput4Value] = useState('')
   const [alertSpaceEmpty1, setAlertSpaceEmpty1] = useState('')
   const [alertSpaceEmpty2, setAlertSpaceEmpty2] = useState('')
   const [alertSpaceEmpty3, setAlertSpaceEmpty3] = useState('')
   const [alertSpaceEmpty4, setAlertSpaceEmpty4] = useState('')
 
+  const handleInputs = (e) => {
+
+
+
+    prevent == true && e.preventDefault()
+
+    
+    setInput1Value(e.target[0].value)
+    setInput2Value(e.target[1].value)
+    setInput3Value(e.target[2].value)
+    setInput4Value(e.target[3].value)
+    console.log(input1Value);
+    console.log(input2Value);
+    console.log(input3Value);
+    console.log(input4Value);
+
+   
+  }
   
 
   const handleSubmitDefault = (e) => {
@@ -22,11 +44,6 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
 
     prevent == true && e.preventDefault()
 
-    
-    const input1Value = e.target[0].value
-    const input2Value = e.target[1].value
-    const input3Value = e.target[2].value
-    const input4Value = e.target[3].value
 
     if(input1Value != '' && input2Value != '' && input3Value != '' && input4Value != '' ) {
       setPrevent(false)
@@ -64,7 +81,7 @@ const PaySectionModal = ({data, isOpen, setOpenModal}) => {
         <h1>Finalizar Compra:</h1>
         </div>
             <div className='forms'>
-              <form onSubmit={handleSubmitDefault}>
+              <form onSubmit={handleSubmitDefault} onChange={handleInputs}>
                 <label className='payCart-label'>Digite seu nome:</label>
                 <input type="text" placeholder='Nome completo'/>
                 <p className='Ps' style={{

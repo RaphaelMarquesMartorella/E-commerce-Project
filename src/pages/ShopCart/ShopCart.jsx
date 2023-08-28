@@ -41,7 +41,7 @@ const Carrinho = ({data}) => {
   
       const options = {
         "method": "GET",
-        "url": `http://localhost:3001/api/v1/products/${ID._id}`,
+        "url": `https://secure-beyond-22435-36910cbe64ba.herokuapp.com/api/v1/products/${ID._id}`,
       }
       
       const fetchData = useCallback(
@@ -51,9 +51,9 @@ const Carrinho = ({data}) => {
         
         .then((response) => {
   
-          const APIResponse = response.data // This is response data from AXIOS
+          const APIResponse = response.data
   
-           // This is response data from API
+          
   
           setFacility(APIResponse.getProduct)
           

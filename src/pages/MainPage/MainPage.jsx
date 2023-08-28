@@ -6,7 +6,7 @@ import FooterMain from '../../components/FooterMain/FooterMain'
 import { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 
-const MainPage = ({data}) => {
+const MainPage = () => {
     
   
   const [facility, setFacility] = useState([]);
@@ -21,15 +21,15 @@ const MainPage = ({data}) => {
   const fetchData = useCallback(() => {
     axios({
       "method": "GET",
-      "url": "http://localhost:3001/api/v1/products",
+      "url": "https://secure-beyond-22435-36910cbe64ba.herokuapp.com/api/v1/products",
     })
       .then((response) => {
 
-        const APIResponse = response.data // This is response data from AXIOS
+        const APIResponse = response.data
 
-        console.log("response: ", APIResponse.allProducts) // This is response data from API
+        console.log("response: ", APIResponse.allProducts)
 
-        setFacility(APIResponse.allProducts) // Only Response from API is set in state
+        setFacility(APIResponse.allProducts)
 
       })
       .catch((error) => {

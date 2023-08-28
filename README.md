@@ -1,15 +1,15 @@
 
 #E-commerce project
 
-E-commerce feito por conta própria usando React e pegando dados de um mock criado por conta própria.
+E-commerce feito por conta própria usando React e com dados de uma API própria criada, com um banco de dados do MongoDB.
 
 #Como foi feito
 
-Feito inteiramente com o React do Vite, dados pegos de um Mock feito por conta própria.
+Feito inteiramente com o React do Vite e com dados de uma API própria criada, com um banco de dados do MongoDB.
 
 #Como ver o projeto
 
-Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd" para a pasta "e-commerce", depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL.
+Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd client" para a pasta "client", depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL. Após isso coloque "cd server" para rodar o back-end do projeto, então dê um "npm start". 
 
 
 
