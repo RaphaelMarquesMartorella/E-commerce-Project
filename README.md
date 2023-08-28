@@ -1,9 +1,9 @@
 
-#E-commerce project
+# E-commerce project
 
 E-commerce feito por conta própria usando React e pegando dados de uma api criada por conta própria.
 
-#Como foi feito
+# Como foi feito
 
 Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta própria.
 
@@ -11,7 +11,17 @@ Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta p
 
 Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd" para a pasta "e-commerce", depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL.
 
+# E-commerce project
 
+Self-built e-commerce using React and grabbing data from a self-built api.
+
+# How it was done
+
+Made entirely with Vite's React, data taken from a self-made api.
+
+#How to view the project
+
+To use: When you already have the file on your machine, place a "cd" to the "e-commerce" folder, then "npm i", then place "npm run dev" and click on the link that appears in the terminal with CTRL.
 
 ## Authors
 
