@@ -1,19 +1,19 @@
 
 # E-commerce project
 
-<<<<<<< HEAD
+
 E-commerce feito por conta própria usando React e com dados de uma API própria criada, com um banco de dados do MongoDB.
-=======
+
 E-commerce feito por conta própria usando React e pegando dados de uma api criada por conta própria.
->>>>>>> aac25d2ce2f8dd239fdf71231d74523abc237eb0
+
 
 # Como foi feito
 
-<<<<<<< HEAD
+
 Feito inteiramente com o React do Vite e com dados de uma API própria criada, com um banco de dados do MongoDB.
-=======
+
 Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta própria.
->>>>>>> aac25d2ce2f8dd239fdf71231d74523abc237eb0
+
 
 Como ver o projeto
 
