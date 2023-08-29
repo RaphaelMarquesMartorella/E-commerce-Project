@@ -41,7 +41,7 @@ const Carrinho = ({data}) => {
   
       const options = {
         "method": "GET",
-        "url": `https://e-commerce--api-7382d9eea506.herokuapp.com/api/v1/products/${ID._id}`,
+        "url": `https://e--commerce-back-end-370a1b41868d.herokuapp.com/api/v1/products/${ID._id}`,
       }
       
       const fetchData = useCallback(
