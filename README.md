@@ -13,7 +13,7 @@ Feito inteiramente com o React do Vite e com dados de uma API própria criada, c
 
 Como rodar o projeto
 
-Quando você já tiver o projeto em sua máquina, digite "cd server" para executar o back-end do projeto e depois "npm start". Depois disso, digite “cd client” após isso “npm i”, e “npm run dev” então clique no link que aparece no terminal com CTRL.
+Quando você já tiver o projeto em sua máquina, vá para a pasta do projeto "cd E-commerce-project", baixe as dependências "npm i", vá para a pasta do back-end "cd server" e para executar o back-end "npm start". Depois disso, vá para a pasta do front-end “cd client” e escreva “npm run dev” para iniciar o front-end, então clique no link que aparece no terminal com CTRL.
 
 # E-commerce project
 
@@ -25,7 +25,7 @@ Made entirely with Vite's React, data taken from a self-made api.
 
 How to run the project
 
-When you already have the project in your machine, type "cd server" to run the back-end of the project, then "npm start". After that, type "cd client", then "npm i", after that "npm run dev" and click on the link that appears in the terminal with CTRL.
+When you already have the project on your machine, go to the project folder "cd E-commerce-project", download the dependencies "npm i", go to the backend folder "cd server" and to run the back -end "npm start". After that, go to the front-end folder “cd client” and type “npm run dev” to start the front-end, then click on the link that appears in the terminal with CTRL.
 
 
 
