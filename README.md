@@ -29,9 +29,7 @@ When you already have the project in your machine, type "cd server" to run the b
 
 
 
-# Back-end feito com Express.js.
-# Back-end made with Express.js.
-
+# Back-end 
 
 
 ## Documentation
