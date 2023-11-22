@@ -27,9 +27,23 @@ How to run the project
 
 When you already have the project in your machine, type "cd server" to run the back-end of the project, then "npm start". After that, type "cd client", then "npm i", after that "npm run dev" and click on the link that appears in the terminal with CTRL.
 
-## Back-end and Docs
 
-([https://github.com/RaphaelMarquesMartorella/E-commerce-project/tree/main/server](otherfile.md))
+
+## Back-end feito com Express.js.
+### Back-end made with Express.js.
+
+
+
+## Documentation
+
+### localhost:3001/api-docs/
+
+
+
+##### Para iniciar escreva git clone no seu terminal e use a url do gitHub, após isso escreva 'cd server' para ir até a pasta correta e então 'npm start'.
+
+
+##### To start, type git clone in your terminal and use the gitHub url, after that type 'cd server' to go to the correct folder and then 'npm start'.
 
 
 
