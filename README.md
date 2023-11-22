@@ -29,7 +29,7 @@ When you already have the project in your machine, type "cd server" to run the b
 
 ## Back-end and Docs
 
-[Docs.Back-end]([otherfile.md](https://github.com/RaphaelMarquesMartorella/E-commerce-project/blob/main/server/README.md))
+[Docs.Back-end](otherfile.md) - [Path](https://github.com/RaphaelMarquesMartorella/E-commerce-project/blob/main/server/otherfile.md)
 
 
 
