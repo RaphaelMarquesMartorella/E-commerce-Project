@@ -4,15 +4,11 @@
 
 E-commerce feito por conta própria usando React e com dados de uma API própria criada, com um banco de dados do MongoDB.
 
-E-commerce feito por conta própria usando React e pegando dados de uma api criada por conta própria.
-
 
 # Como foi feito
 
 
 Feito inteiramente com o React do Vite e com dados de uma API própria criada, com um banco de dados do MongoDB.
-
-Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta própria.
 
 
 Como rodar o projeto
