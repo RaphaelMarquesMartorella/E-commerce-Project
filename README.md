@@ -43,8 +43,7 @@ Para iniciar escreva git clone no seu terminal e use a url do gitHub, após isso
 
 To start, type git clone in your terminal and use the gitHub url, after that type 'cd server' to go to the correct folder and then 'npm start'.
 
-
-
+<br/>
 
 ## Authors
 
