@@ -31,6 +31,11 @@ How to view the project
 
 To use: When you already have the file on your machine, place a "cd" to the "e-commerce" folder, then "npm i", then place "npm run dev" and click on the link that appears in the terminal with CTRL.
 
+## Back-end and Docs
+
+[Docs.Back-end]([otherfile.md](https://github.com/RaphaelMarquesMartorella/E-commerce-project/blob/main/server/README.md))
+
+
 ## Authors
 
 - [@RaphaelMarquesMartorella](https://github.com/RaphaelMarquesMartorella)
