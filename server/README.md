@@ -19,7 +19,4 @@
 
 
 
-![Screenshot (108)](https://github.com/RaphaelMarquesMartorella/E-commerce-Back-End/assets/118463534/03c7bae5-27cc-4d33-9f51-44d24f6f5161)
-
-
 
