@@ -15,9 +15,9 @@ Feito inteiramente com o React do Vite e com dados de uma API própria criada, c
 Feito inteiramente com o React do Vite, dados pegos de uma api feita por conta própria.
 
 
-Como ver o projeto
+Como rodar o projeto
 
-Para usar: Quando já estiver com o ariquivo na sua máquina, coloque um "cd client" para a pasta "client", depois um "npm i", então coloque "npm run dev" e clique no link que aparecer no terminal com CTRL. Após isso coloque "cd server" para rodar o back-end do projeto, então dê um "npm start". 
+Quando você já tiver o projeto em sua máquina, digite "cd server" para executar o back-end do projeto e depois "npm start". Depois disso, digite “cd client” após isso “npm i”, e “npm run dev” então clique no link que aparece no terminal com CTRL.
 
 # E-commerce project
 
@@ -27,13 +27,14 @@ Self-built e-commerce using React and grabbing data from a self-built api.
 
 Made entirely with Vite's React, data taken from a self-made api.
 
-How to view the project
+How to run the project
 
-To use: When you already have the file on your machine, place a "cd" to the "e-commerce" folder, then "npm i", then place "npm run dev" and click on the link that appears in the terminal with CTRL.
+When you already have the project in your machine, type "cd server" to run the back-end of the project, then "npm start". After that, type "cd client", then "npm i", after that "npm run dev" and click on the link that appears in the terminal with CTRL.
 
 ## Back-end and Docs
 
 [Docs.Back-end]([otherfile.md](https://github.com/RaphaelMarquesMartorella/E-commerce-project/blob/main/server/README.md))
+
 
 
 ## Authors
