@@ -47,7 +47,7 @@ const ProductSelected = ({data}) => {
 
     const options = {
       "method": "GET",
-      "url": `https://e--commerce-back-end-370a1b41868d.herokuapp.com/api/v1/products/${ID._id}`,
+      "url": `http://localhost:3001/api/v1/products/${ID._id}`,
     }
     
     const fetchData = useCallback(

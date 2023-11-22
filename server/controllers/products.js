@@ -1,6 +1,3 @@
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
-
 const Products = require('../models/Products')
 
 const createProduct = async (req, res) => {
@@ -11,7 +8,6 @@ const createProduct = async (req, res) => {
         res.status(500).json({ error: 'Error finding product' });
       } else {
         if (!product) {
-          // No existing product found, create a new one
           const newProduct = new Products({
             videoGames: [],
             imgPath,
@@ -28,7 +24,6 @@ const createProduct = async (req, res) => {
               res.status(500).json({ error: 'Error saving product' });
             });
         } else {
-          // Existing product found, push the new product details
           product.videoGames.push({
             imgPath,
             title,
@@ -50,7 +45,7 @@ const createProduct = async (req, res) => {
   };
   
 
-const getProducts = async (req,res) => {
+const getProducts = async (_,res) => {
     try {
        
         const allProducts = await Products.find({}).maxTimeMS(20000);
