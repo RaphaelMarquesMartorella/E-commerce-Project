@@ -26,21 +26,20 @@ The application will be running on: http://127.0.0.1:5173/
 
 ### Endpoints: 
 
-Products
-POST /api/v1/products: Create a new product.
-GET /api/v1/products: Retrieve all products.
-GET /api/v1/products/:id: Retrieve a product by ID.
-PUT /api/v1/products/:id: Update a product by ID.
-DELETE /api/v1/products/:id: Delete a product by ID.
-Authentication
-POST /api/v1/auth/register: Register a new user.
-POST /api/v1/auth/login: Login an existing user.
+Products <br/>
+POST /api/v1/products: Create a new product. <br/>
+GET /api/v1/products: Retrieve all products. <br/>
+GET /api/v1/products/:id: Retrieve a product by ID. <br/>
+PUT /api/v1/products/:id: Update a product by ID. <br/>
+DELETE /api/v1/products/:id: Delete a product by ID. <br/>
+Authentication <br/>
+POST /api/v1/auth/register: Register a new user. <br/>
+POST /api/v1/auth/login: Login an existing user. <br/>
 
 
 ### Swagger UI:
 localhost:3001/api-docs/
 
-<br/>
 <br/>
 
 ## Authors
