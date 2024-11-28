@@ -11,7 +11,7 @@ const {
 
 /**
  * @swagger
- * /api/v1/products/createProduct:
+ * /api/v1/products:
  *   post:
  *     summary: Create a new product
  *     requestBody:
@@ -26,7 +26,9 @@ const {
  *               title:
  *                 type: string
  *               price:
- *                 type: number
+ *                 type: string
+ *               color:
+ *                 type: string
  *               description:
  *                 type: string
  *     responses:
@@ -35,7 +37,7 @@ const {
  *       500:
  *         description: Server error
  */
-router.post('/createProduct', createProduct);
+router.post('/', createProduct);
 
 /**
  * @swagger
@@ -71,9 +73,15 @@ router.get('/:id', getSingleProduct);
 
 /**
  * @swagger
- * /api/v1/products/updateProduct:
+ * /api/v1/products/{id}:
  *   put:
  *     summary: Update a product
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -88,7 +96,9 @@ router.get('/:id', getSingleProduct);
  *               title:
  *                 type: string
  *               price:
- *                 type: number
+ *                 type: string
+ *               color:
+ *                 type: string
  *               description:
  *                 type: string
  *     responses:
@@ -99,22 +109,19 @@ router.get('/:id', getSingleProduct);
  *       500:
  *         description: Server error
  */
-router.put('/updateProduct', updateSingleProduct);
+router.put('/:id', updateSingleProduct);
 
 /**
  * @swagger
- * /api/v1/products/deleteProduct:
+ * /api/v1/products/{id}:
  *   delete:
  *     summary: Delete a product
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               productId:
- *                 type: string
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Successfully deleted the product
@@ -123,6 +130,6 @@ router.put('/updateProduct', updateSingleProduct);
  *       500:
  *         description: Server error
  */
-router.delete('/deleteProduct', deleteSingleProduct);
+router.delete('/:id', deleteSingleProduct);
 
 module.exports = router;

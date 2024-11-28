@@ -19,25 +19,18 @@ const Carrinho = ({data}) => {
     const FindData = async () => {
     
       try {
-        
           const selectedCart = await data.find(cart => cart._id == shopCartId)
         
-        if(selectedCart) {
-  
-          setID(selectedCart)
-          
-        return selectedCart
-        }
-        
-      
-      } catch (error) {
-        console.log(error);
-  
-      }
+          if(selectedCart) {
     
-      
+            setID(selectedCart)
+            
+          return selectedCart
+          }
+      } catch (error) {       
+          console.log(error);
+      }
     }
-  
   
       const options = {
         "method": "GET",
@@ -48,23 +41,16 @@ const Carrinho = ({data}) => {
         () => {
           axios.request(options)
         
-        
         .then((response) => {
   
           const APIResponse = response.data
   
-          
-  
-          setFacility(APIResponse.getProduct)
-          
-          // Only Response from API is set in state
-          
+          setFacility(APIResponse)
         })
         .catch((error) => {
-          
-          
+          console.log(error);
+                    
         })
-      
         },
         [ID],
       )

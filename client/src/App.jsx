@@ -35,7 +35,7 @@ function App() {
 
         
 
-        setFacility(APIResponse.allProducts)
+        setFacility(APIResponse)
 
       })
       .catch((error) => {
@@ -56,7 +56,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <StoreHeader onSubmit={(inputValue) => setSearchValue(inputValue)}/> */}
       <Routes>
         <Route path='/' element= {<Login />} />
         {(cookies.access_token) && 

@@ -1,14 +1,12 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const ProductSchema = new mongoose.Schema ({
-    videoGames: {
-        type: Array,
-        required: true,
-
-    },
+const ProductSchema = new mongoose.Schema({
     productId: {
         type: String,
-        
+        unique: true,
+        default: function() {
+            return 'P-' + Math.random().toString(36).substring(2, 9).toUpperCase();
+        },
     },
     imgPath: {
         type: String,
@@ -24,13 +22,13 @@ const ProductSchema = new mongoose.Schema ({
     },
     color: {
         type: String,
-        
     },
     description: {
         type: String,
         required: [true, "Please provide an image description."]
     },
-    
-})
+});
 
-module.exports = mongoose.model('Job', ProductSchema)
+// MongoDB automatically generates the _id field as the primary key
+
+module.exports = mongoose.model('Product', ProductSchema);

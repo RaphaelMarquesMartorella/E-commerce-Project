@@ -27,9 +27,8 @@ const MainPage = () => {
 
         const APIResponse = response.data
 
-        console.log("response: ", APIResponse.allProducts)
 
-        setFacility(APIResponse.allProducts)
+        setFacility(APIResponse)
 
       })
       .catch((error) => {
@@ -62,12 +61,7 @@ const MainPage = () => {
                 <div className='products'> {
             facility.map((item, i) => {
               return (
-                
-                    
-                    
                    <ProductsCard data={item} key={i}/>
-                        
-                   
               );
             })
           }

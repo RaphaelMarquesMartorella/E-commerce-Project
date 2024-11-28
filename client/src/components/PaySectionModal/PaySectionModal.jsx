@@ -1,133 +1,123 @@
-import React from 'react'
-import './index.scss'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import './index.scss';
+import { Link } from 'react-router-dom';
 
+const PaySectionModal = ({ data, isOpen, setOpenModal }) => {
+  const idParam = window.localStorage.getItem('idParam');
 
-const PaySectionModal = ({data, isOpen, setOpenModal}) => {
-  
-  const idParam = window.localStorage.getItem('idParam')
+  const [formValues, setFormValues] = useState({
+    name: '',
+    cpf: '',
+    address: '',
+    paymentMethod: '',
+  });
 
-  const [prevent, setPrevent] = useState(true)
-  const [input1Value, setInput1Value] = useState('')
-  const [input2Value, setInput2Value] = useState('')
-  const [input3Value, setInput3Value] = useState('')
-  const [input4Value, setInput4Value] = useState('')
-  const [alertSpaceEmpty1, setAlertSpaceEmpty1] = useState('')
-  const [alertSpaceEmpty2, setAlertSpaceEmpty2] = useState('')
-  const [alertSpaceEmpty3, setAlertSpaceEmpty3] = useState('')
-  const [alertSpaceEmpty4, setAlertSpaceEmpty4] = useState('')
+  const [errors, setErrors] = useState({
+    name: '',
+    cpf: '',
+    address: '',
+    paymentMethod: '',
+  });
 
-  const handleInputs = (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
+    setErrors((prev) => ({
+      ...prev,
+      [name]: '',
+    }));
+  };
 
+  const validateFields = () => {
+    const newErrors = {};
+    if (!formValues.name.trim()) newErrors.name = '*Campo Obrigatório não preenchido*';
+    if (!formValues.cpf.trim()) newErrors.cpf = '*Campo Obrigatório não preenchido*';
+    if (!formValues.address.trim()) newErrors.address = '*Campo Obrigatório não preenchido*';
+    if (!formValues.paymentMethod.trim()) newErrors.paymentMethod = '*Campo Obrigatório não preenchido*';
 
-    prevent == true && e.preventDefault()
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-    
-    setInput1Value(e.target[0].value)
-    setInput2Value(e.target[1].value)
-    setInput3Value(e.target[2].value)
-    setInput4Value(e.target[3].value)
-    console.log(input1Value);
-    console.log(input2Value);
-    console.log(input3Value);
-    console.log(input4Value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-   
-  }
-  
+    if (validateFields()) {
+      const whatsappMessage = `https://wa.me/5583981577251?text=Olá,%20gostaria%20de%20finalizar%20a%20compra%20com%20os%20seguintes%20dados:%0A%0ANome:%20${encodeURIComponent(
+        formValues.name
+      )}%0ACPF:%20${encodeURIComponent(
+        formValues.cpf
+      )}%0AEndereço:%20${encodeURIComponent(
+        formValues.address
+      )}%0AForma%20de%20Pagamento:%20${encodeURIComponent(formValues.paymentMethod)}`;
 
-  const handleSubmitDefault = (e) => {
-
-
-
-    prevent == true && e.preventDefault()
-
-
-    if(input1Value != '' && input2Value != '' && input3Value != '' && input4Value != '' ) {
-      setPrevent(false)
-    }if (input1Value == ''){
-      setAlertSpaceEmpty1("*Campo Obrigatório não preenchido*")
-    }else if (input1Value != '') {
-      setAlertSpaceEmpty1('')
-    }if (input2Value == '') {
-      setAlertSpaceEmpty2("*Campo Obrigatório não preenchido*")
-    }else if (input2Value != '') {
-      setAlertSpaceEmpty2('')
-    }if (input3Value == '') {
-      setAlertSpaceEmpty3("*Campo Obrigatório não preenchido*")
-    }else if (input3Value != '') {
-      setAlertSpaceEmpty3('')
-    }if (input4Value == '') {
-      setAlertSpaceEmpty4("*Campo Obrigatório não preenchido*")
-    }else if (input4Value != '') {
-      setAlertSpaceEmpty4('')
+      window.location.href = whatsappMessage;
     }
-    
-  }
-  
-  
+  };
+
   return (
     <div className='modal'>
-       <div className='all-content'>
+      <div className='all-content'>
         <div className='title'>
-        <div className='right-side__title'>
-                <Link to={`/productSelected/${idParam}`}><span onClick={setOpenModal}>X</span></Link>
-
-                
-                
-            </div>
-        <h1>Finalizar Compra:</h1>
+          <div className='right-side__title'>
+            <Link to={`/productSelected/${idParam}`}>
+              <span onClick={setOpenModal}>X</span>
+            </Link>
+          </div>
+          <h1>Finalizar Compra:</h1>
         </div>
-            <div className='forms'>
-              <form action='https://api.sheetmonkey.io/form/8yEYpMYuQe2at4DpiwbE6f' method='post' onSubmit={handleSubmitDefault} onChange={handleInputs}>
-                <label className='payCart-label'>Digite seu nome:</label>
-                <input type="text" placeholder='Nome completo'/>
-                <p className='Ps' style={{
-                  width:'430px',
-                  textAlign:'right',
-                  marginTop:'-15px',
-                  fontSize: '12px', 
-                  color:'red'
-                }}>{alertSpaceEmpty1}</p>
-                <label className='payCart-label'>Digite seu CPF:</label>
-                <input type="text" placeholder='000.000.000-00'/>
-                <p className='Ps' style={{
-                  width:'430px',
-                  textAlign:'right',
-                  marginTop:'-15px',
-                  fontSize: '12px', 
-                  color:'red'
-                }}>{alertSpaceEmpty2}</p>
-                <label className='payCart-label'>Endereço:</label>
-                <input type="text" placeholder='Rua dos bobos, número 0'/>
-                <p className='Ps' style={{
-                  width:'430px',
-                  textAlign:'right',
-                  marginTop:'-15px',
-                  fontSize: '12px', 
-                  color:'red'
-                }}>{alertSpaceEmpty3}</p>
-                <label className='payCart-label'>Forma de Pagamento:</label>
-                <input type="text" placeholder='Dinheiro/Cartão'/>
-                <p className='Ps' style={{
-                  width:'430px',
-                  textAlign:'right',
-                  marginTop:'-15px',
-                  fontSize: '12px', 
-                  color:'red'
-                }}>{alertSpaceEmpty4}</p>
-                <button>Confirmar Pedido</button>
-                </form>
+        <div className='forms'>
+          <form onSubmit={handleSubmit}>
+            <label className='payCart-label'>Digite seu nome:</label>
+            <input
+              type='text'
+              placeholder='Nome completo'
+              name='name'
+              value={formValues.name}
+              onChange={handleInputChange}
+            />
+            {errors.name && <p className='Ps error-text'>{errors.name}</p>}
 
-            </div>
-             </div>
-             
+            <label className='payCart-label'>Digite seu CPF:</label>
+            <input
+              type='text'
+              placeholder='000.000.000-00'
+              name='cpf'
+              value={formValues.cpf}
+              onChange={handleInputChange}
+            />
+            {errors.cpf && <p className='Ps error-text'>{errors.cpf}</p>}
+
+            <label className='payCart-label'>Endereço:</label>
+            <input
+              type='text'
+              placeholder='Rua dos bobos, número 0'
+              name='address'
+              value={formValues.address}
+              onChange={handleInputChange}
+            />
+            {errors.address && <p className='Ps error-text'>{errors.address}</p>}
+
+            <label className='payCart-label'>Forma de Pagamento:</label>
+            <input
+              type='text'
+              placeholder='Dinheiro/Cartão'
+              name='paymentMethod'
+              value={formValues.paymentMethod}
+              onChange={handleInputChange}
+            />
+            {errors.paymentMethod && <p className='Ps error-text'>{errors.paymentMethod}</p>}
+
+            <button type='submit'>Confirmar Pedido</button>
+          </form>
         </div>
-        
-    
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default PaySectionModal
+export default PaySectionModal;
