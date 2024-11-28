@@ -1,48 +1,46 @@
-
 # E-commerce project
 
+A self-developed e-commerce platform built with React, leveraging data from a custom-built Node.js/Express API and utilizing MongoDB for database management. The project incorporates Vite for efficient development, Axios for API requests, and SAAS for responsive and modern styling.
 
-E-commerce feito por conta própria usando React e com dados de uma API própria criada, com um banco de dados do MongoDB.
+# Front -end
 
+## Getting Started
 
-# Como foi feito
+* Clone the repository: `git clone https://github.com/RaphaelMarhttps://github.com/RaphaelMarquesMartorella/E-commerce-project`
+* Follow the right path: `cd E-commerce` 
+* Go to the client folder: `cd client`
+* Install dependencies: `npm install`
+* Start the project: `npm run dev`
 
-
-Feito inteiramente com o React do Vite e com dados de uma API própria criada, com um banco de dados do MongoDB.
-
-
-Como rodar o projeto
-
-Quando você já tiver o projeto em sua máquina, vá para a pasta do projeto "cd E-commerce-project", baixe as dependências "npm i", vá para a pasta do back-end "cd server" e para executar o back-end "npm start". Depois disso, vá para a pasta do front-end “cd client” e escreva “npm run dev” para iniciar o front-end, então clique no link que aparece no terminal com CTRL.
-
-# E-commerce project
-
-Self-built e-commerce using React and grabbing data from a self-built api.
-
-# How it was done
-
-Made entirely with Vite's React, data taken from a self-made api.
-
-How to run the project
-
-When you already have the project on your machine, go to the project folder "cd E-commerce-project", download the dependencies "npm i", go to the backend folder "cd server" and to run the back -end "npm start". After that, go to the front-end folder “cd client” and type “npm run dev” to start the front-end, then click on the link that appears in the terminal with CTRL.
-
+The application will be running on: http://127.0.0.1:5173/
 
 
 # Back-end 
 
+* *Assuming you cloned and followed the path* 
+* Go to the server folder: `cd server`
+* Install dependencies: `npm install`
+* Start the project: `npm start`
 
 ## Documentation
 
+### Endpoints: 
 
-### localhost:3001/api-docs/
+Products
+POST /api/v1/products: Create a new product.
+GET /api/v1/products: Retrieve all products.
+GET /api/v1/products/:id: Retrieve a product by ID.
+PUT /api/v1/products/:id: Update a product by ID.
+DELETE /api/v1/products/:id: Delete a product by ID.
+Authentication
+POST /api/v1/auth/register: Register a new user.
+POST /api/v1/auth/login: Login an existing user.
+
+
+### Swagger UI:
+localhost:3001/api-docs/
 
 <br/>
-
-Para iniciar escreva git clone no seu terminal e use a url do gitHub, após isso escreva 'cd server' para ir até a pasta correta e então 'npm start'.
-
-To start, type git clone in your terminal and use the gitHub url, after that type 'cd server' to go to the correct folder and then 'npm start'.
-
 <br/>
 
 ## Authors
